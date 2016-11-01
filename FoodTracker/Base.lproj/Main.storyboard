@@ -38,7 +38,12 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alO-Qf-UUV"/>
                                         </connections>
                                     </button>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Default Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Du4-tW-BtX"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Default Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Du4-tW-BtX">
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="crm-Gx-utc" appends="YES" id="S99-uO-f7D"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -52,10 +57,16 @@
                         <outlet property="heading" destination="d5e-0J-mUq" id="GwD-JA-iHp"/>
                         <outlet property="mealNameLabel" destination="d5e-0J-mUq" id="Io1-yR-N07"/>
                         <outlet property="nameTextField" destination="b34-H4-yfb" id="IQx-Q3-znb"/>
+                        <outlet property="photoImageView" destination="Du4-tW-BtX" id="eGl-j9-fZ9"/>
                         <outlet property="setDefaultLabelText" destination="BM0-8o-S5g" id="5cq-E0-7SO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="crm-Gx-utc">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="cdz-Th-51r"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
         </scene>
