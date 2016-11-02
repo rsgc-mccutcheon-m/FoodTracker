@@ -19,8 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vLb-KL-7pV">
-                                <frame key="frameInset" minX="16" minY="81" width="343" height="506"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vLb-KL-7pV">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5e-0J-mUq">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -48,12 +47,27 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="b34-H4-yfb" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" constant="46" id="27e-9y-KVh"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Ba-Zx-QSh" secondAttribute="bottom" id="EBJ-SA-6t0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Du4-tW-BtX" secondAttribute="bottom" constant="56" id="Qdk-Ve-4hS"/>
+                                    <constraint firstItem="BM0-8o-S5g" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" constant="88" id="Sb4-r8-iNT"/>
+                                    <constraint firstItem="9Ba-Zx-QSh" firstAttribute="top" secondItem="Du4-tW-BtX" secondAttribute="bottom" constant="12" id="b77-T2-f0h"/>
+                                    <constraint firstAttribute="bottom" secondItem="d5e-0J-mUq" secondAttribute="bottom" constant="472" id="fTe-hB-9qj"/>
+                                    <constraint firstAttribute="bottom" secondItem="BM0-8o-S5g" secondAttribute="bottom" constant="388" id="oZl-PJ-29g"/>
+                                    <constraint firstItem="d5e-0J-mUq" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" id="qLM-5a-qym"/>
+                                    <constraint firstItem="Du4-tW-BtX" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" constant="130" id="rUJ-Ne-jdy"/>
+                                    <constraint firstAttribute="bottom" secondItem="b34-H4-yfb" secondAttribute="bottom" constant="430" id="ufA-iJ-Yzj"/>
+                                    <constraint firstItem="d5e-0J-mUq" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" id="vfm-1c-pJP"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vLb-KL-7pV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="ycf-Po-nWY"/>
-                            <constraint firstItem="vLb-KL-7pV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="z61-6t-Zpg"/>
+                            <constraint firstItem="vLb-KL-7pV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OmP-F8-Rpo"/>
+                            <constraint firstItem="vLb-KL-7pV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="P0T-hO-m3s"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="bottom" constant="80" id="kcS-Nr-zbh"/>
+                            <constraint firstItem="vLb-KL-7pV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pnk-dA-diA"/>
                         </constraints>
                     </view>
                     <connections>

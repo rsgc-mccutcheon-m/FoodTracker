@@ -11,6 +11,8 @@ import UIKit
 class RatingControl: UIView {
     
     
+   
+    
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
@@ -19,9 +21,25 @@ class RatingControl: UIView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         button.backgroundColor = UIColor.red
         
+        
+        button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(_:)), for: .TouchDown)
+        
         addSubview(button)
     
     }
+    
+    override func intrinsicContentSize() -> CGSize {
+        return CGSize(width: 240, height: 44)
+    }
+    
+    
+    // MARK: Button Action
+    
+    func ratingButtonTapped(button: UIButton) {
+        print("Button pressed 👍")
+    }
+   
+    
     
     
     
