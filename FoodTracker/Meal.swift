@@ -32,7 +32,7 @@ class Meal {
         
         //check if init failed due to nil nmae value input or neg ratings!
         
-        if name.isEmpty || rating < 0 {
+        if (name.isEmpty) || (rating < 0) {
             
             return nil
         }
