@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vLb-KL-7pV">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vLb-KL-7pV">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5e-0J-mUq">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -31,14 +31,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BM0-8o-S5g">
-                                        <state key="normal" title="Set Default Label Text"/>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alO-Qf-UUV"/>
-                                        </connections>
-                                    </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Default Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Du4-tW-BtX">
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Du4-tW-BtX" secondAttribute="height" multiplier="1:1" id="249-Sz-h5m"/>
+                                        </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="crm-Gx-utc" appends="YES" id="S99-uO-f7D"/>
                                         </connections>
@@ -48,26 +45,24 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="b34-H4-yfb" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" constant="46" id="27e-9y-KVh"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Ba-Zx-QSh" secondAttribute="bottom" id="EBJ-SA-6t0"/>
-                                    <constraint firstAttribute="bottom" secondItem="Du4-tW-BtX" secondAttribute="bottom" constant="56" id="Qdk-Ve-4hS"/>
-                                    <constraint firstItem="BM0-8o-S5g" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" constant="88" id="Sb4-r8-iNT"/>
-                                    <constraint firstItem="9Ba-Zx-QSh" firstAttribute="top" secondItem="Du4-tW-BtX" secondAttribute="bottom" constant="12" id="b77-T2-f0h"/>
-                                    <constraint firstAttribute="bottom" secondItem="d5e-0J-mUq" secondAttribute="bottom" constant="472" id="fTe-hB-9qj"/>
-                                    <constraint firstAttribute="bottom" secondItem="BM0-8o-S5g" secondAttribute="bottom" constant="388" id="oZl-PJ-29g"/>
-                                    <constraint firstItem="d5e-0J-mUq" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" id="qLM-5a-qym"/>
-                                    <constraint firstItem="Du4-tW-BtX" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" constant="130" id="rUJ-Ne-jdy"/>
-                                    <constraint firstAttribute="bottom" secondItem="b34-H4-yfb" secondAttribute="bottom" constant="430" id="ufA-iJ-Yzj"/>
-                                    <constraint firstItem="d5e-0J-mUq" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" id="vfm-1c-pJP"/>
+                                    <constraint firstItem="Du4-tW-BtX" firstAttribute="top" secondItem="b34-H4-yfb" secondAttribute="bottom" constant="12" id="6bl-Y2-Ope"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Ba-Zx-QSh" secondAttribute="bottom" id="78W-2K-zC1"/>
+                                    <constraint firstItem="9Ba-Zx-QSh" firstAttribute="top" secondItem="Du4-tW-BtX" secondAttribute="bottom" constant="12" id="Cyb-y4-czW"/>
+                                    <constraint firstItem="d5e-0J-mUq" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="top" id="dj6-cR-gsL"/>
+                                    <constraint firstAttribute="bottom" secondItem="d5e-0J-mUq" secondAttribute="bottom" constant="430" id="edh-Ip-mkc"/>
+                                    <constraint firstItem="Du4-tW-BtX" firstAttribute="top" secondItem="b34-H4-yfb" secondAttribute="bottom" constant="12" id="gQr-OV-uKt"/>
+                                    <constraint firstItem="9Ba-Zx-QSh" firstAttribute="top" secondItem="Du4-tW-BtX" secondAttribute="bottom" constant="12" id="mqK-ed-fCk"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5e-0J-mUq" secondAttribute="trailing" constant="102" id="pTd-U2-DoA"/>
+                                    <constraint firstItem="b34-H4-yfb" firstAttribute="top" secondItem="d5e-0J-mUq" secondAttribute="bottom" constant="12" id="wax-Qz-2Ev"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vLb-KL-7pV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OmP-F8-Rpo"/>
-                            <constraint firstItem="vLb-KL-7pV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="P0T-hO-m3s"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="bottom" constant="80" id="kcS-Nr-zbh"/>
-                            <constraint firstItem="vLb-KL-7pV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pnk-dA-diA"/>
+                            <constraint firstAttribute="trailing" secondItem="vLb-KL-7pV" secondAttribute="trailing" constant="16" id="2D9-Tm-LVF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vLb-KL-7pV" secondAttribute="bottom" constant="122" id="IlU-Ci-zM3"/>
+                            <constraint firstItem="vLb-KL-7pV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="fxw-rx-Dcd"/>
+                            <constraint firstItem="vLb-KL-7pV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="mbc-XK-OdJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -75,7 +70,7 @@
                         <outlet property="mealNameLabel" destination="d5e-0J-mUq" id="Io1-yR-N07"/>
                         <outlet property="nameTextField" destination="b34-H4-yfb" id="IQx-Q3-znb"/>
                         <outlet property="photoImageView" destination="Du4-tW-BtX" id="eGl-j9-fZ9"/>
-                        <outlet property="setDefaultLabelText" destination="BM0-8o-S5g" id="5cq-E0-7SO"/>
+                        <outlet property="ratingControl" destination="9Ba-Zx-QSh" id="qF1-Ag-m1J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
