@@ -14,13 +14,15 @@ class RatingControl: UIView {
     
     var rating = 0
     var ratingButtons = [UIButton]()
+    let spacing = 5
+    let starCount = 5
     
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
       
-        for _ in 0 ... 4 {
+        for _ in 0 ... (starCount - 1) {
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         
@@ -42,7 +44,7 @@ class RatingControl: UIView {
         
         for (index, button) in ratingButtons.enumerated() {
             
-            buttonFrame.origin.x = CGFloat(index * (44+5))
+            buttonFrame.origin.x = CGFloat(index * (44 + spacing))
             button.frame = buttonFrame
             
         }
