@@ -12,7 +12,16 @@ class RatingControl: UIView {
     
     // MARK: Properties
     
-    var rating = 0
+    var rating = 0 {
+        
+        didSet {
+            
+            setNeedsLayout()
+            
+        }
+    }
+    
+    
     var ratingButtons = [UIButton]()
     let spacing = 5
     let starCount = 5
@@ -23,7 +32,7 @@ class RatingControl: UIView {
         super.init(coder: aDecoder)
         
         //let filledStarImage = UIImage(_:#imageLiteral(resourceName: "filledStar"))
-       // let emptyStarImage = UIImage(_:#imageLiteral(resourceName: "emptyStar"))
+        // let emptyStarImage = UIImage(_:#imageLiteral(resourceName: "emptyStar"))
         
         
         for _ in 0 ... (starCount - 1) {
@@ -61,6 +70,7 @@ class RatingControl: UIView {
             
         }
         
+        updateButtonSelectionStates()
     }
     
     override public var intrinsicContentSize: CGSize {
@@ -75,9 +85,18 @@ class RatingControl: UIView {
     // MARK: Button Action
     
     func ratingButtonTapped(button: UIButton) {
-        print("Button pressed 👍")
+        rating = ratingButtons.index(of: button)! + 1
+        
+        updateButtonSelectionStates()
     }
     
+    func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            
+            button.isSelected = index < rating
+            
+        }
+    }
     
     
     
