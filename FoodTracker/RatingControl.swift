@@ -10,13 +10,17 @@ import UIKit
 
 class RatingControl: UIView {
     
+    // MARK: Properties
     
-   
+    var rating = 0
+    var ratingButtons = [UIButton]()
     
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+      
+        for _ in 0 ... 4 {
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         
@@ -25,8 +29,12 @@ class RatingControl: UIView {
         
         button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchDown)
         
+        
+        ratingButtons += [button]
+            
         addSubview(button)
     
+        }
     }
     
     override public var intrinsicContentSize: CGSize {
