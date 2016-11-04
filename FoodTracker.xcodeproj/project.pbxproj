@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2ACFFE1DCD43FD00A0BF58 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2ACFFD1DCD43FD00A0BF58 /* Meal.swift */; };
 		3F6F95F01DCA90F700E3DAEF /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F95EF1DCA90F700E3DAEF /* RatingControl.swift */; };
 		3FEA7ACD1DBF87C80019C643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA7ACC1DBF87C80019C643 /* AppDelegate.swift */; };
 		3FEA7ACF1DBF87C80019C643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA7ACE1DBF87C80019C643 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F2ACFFD1DCD43FD00A0BF58 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		3F6F95EF1DCA90F700E3DAEF /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3FEA7AC91DBF87C80019C643 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEA7ACC1DBF87C80019C643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				3FEA7ACC1DBF87C80019C643 /* AppDelegate.swift */,
 				3FEA7ACE1DBF87C80019C643 /* ViewController.swift */,
 				3F6F95EF1DCA90F700E3DAEF /* RatingControl.swift */,
+				3F2ACFFD1DCD43FD00A0BF58 /* Meal.swift */,
 				3FEA7AD01DBF87C80019C643 /* Main.storyboard */,
 				3FEA7AD31DBF87C80019C643 /* Assets.xcassets */,
 				3FEA7AD51DBF87C80019C643 /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2ACFFE1DCD43FD00A0BF58 /* Meal.swift in Sources */,
 				3FEA7ACF1DBF87C80019C643 /* ViewController.swift in Sources */,
 				3F6F95F01DCA90F700E3DAEF /* RatingControl.swift in Sources */,
 				3FEA7ACD1DBF87C80019C643 /* AppDelegate.swift in Sources */,
