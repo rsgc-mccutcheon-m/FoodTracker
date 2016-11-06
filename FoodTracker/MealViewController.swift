@@ -18,6 +18,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBOutlet weak var ratingControl: RatingControl!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var meal: Meal?
     
     //MARK: UITextFieldDelegate
     
@@ -56,6 +59,24 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dismiss(animated: true, completion: nil)
         
     
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let senderObject = sender as AnyObject? {
+            if saveButton === senderObject {
+                let name = nameTextField.text ?? ""
+                let photo = photoImageView.image
+                let rating = ratingControl.rating
+                
+                //create meal object before unwind
+                meal = Meal(name: name, photo: photo, rating: rating)
+                
+            }
+        }
+        
     }
     
     

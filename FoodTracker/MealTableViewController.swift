@@ -14,9 +14,7 @@ class MealTableViewController: UITableViewController {
     
     var meals = [Meal]()
     
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,6 +73,19 @@ class MealTableViewController: UITableViewController {
         return cell
     }
     
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    
+    
+        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            meals.append(meal)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+        }
+    
+    }
 
     /*
     // Override to support conditional editing of the table view.
