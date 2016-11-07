@@ -22,8 +22,8 @@ class Meal : NSObject, NSCoding {
     
     // MARK: Archiving paths
     
-    static var DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    static let ArchiveUrl = DocumentsDirectory[0].appendPathComponent("meals")
+    static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    static let ArchiveUrl = DocumentsDirectory[0].appendingPathComponent("meals")
     
  
     
@@ -59,7 +59,7 @@ class Meal : NSObject, NSCoding {
     }
         // MARK: NSCoding
         
-        func encodeWithCoder(aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder ) {
         
             aCoder.encode(name, forKey: PropertyKey.nameKey)
             aCoder.encode(photo, forKey: PropertyKey.photoKey)

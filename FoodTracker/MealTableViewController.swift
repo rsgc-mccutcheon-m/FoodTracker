@@ -180,7 +180,7 @@ class MealTableViewController: UITableViewController {
     
     func saveMeals() {
         
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveUrl.path!)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveUrl.path)
         
         if !isSuccessfulSave {
             print("failed to save meals")
@@ -190,7 +190,7 @@ class MealTableViewController: UITableViewController {
     
     func loadMeals() -> [Meal]? {
         
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Meal.ArchiveURL.path!) as? [Meal]
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Meal.ArchiveURL.path) as? [Meal]
         
     }
     
