@@ -47,7 +47,7 @@ class Meal : NSObject, NSCoding {
             return nil
         }
         
-        
+    }
         // MARK: NSCoding
         
         func encodeWithCoder(aCoder: NSCoder) {
@@ -60,40 +60,12 @@ class Meal : NSObject, NSCoding {
         
         required convenience init?(coder aDecoder : NSCoder) {
         
-        
+            let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as! String
+            let photo = aDecoder.decodeObject(forKey: PropertyKey.photoKey) as? UIImage
+            let rating = aDecoder.decodeObject(forKey: PropertyKey.ratingKey) as! Int
+            
+            self.init(name: name, photo: photo, rating: rating)
         }
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }
