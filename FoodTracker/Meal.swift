@@ -20,6 +20,21 @@ class Meal : NSObject, NSCoding {
     var rating: Int
     
     
+    // MARK: Archiving paths
+    
+    static var DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    static let ArchiveUrl = DocumentsDirectory[0].appendPathComponent("meals")
+    
+    func saveMeals() {
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveUrl.path!)
+        
+        if !isSuccessfulSave {
+            print("failed to save meals")
+        }
+        
+    }
+    
     // MARK: Types
     
     struct PropertyKey {
@@ -39,6 +54,8 @@ class Meal : NSObject, NSCoding {
         self.name = name
         self.photo = photo
         self.rating = rating
+        
+        super.init()
         
         //check if init failed due to nil nmae value input or neg ratings!
         
@@ -65,6 +82,7 @@ class Meal : NSObject, NSCoding {
             let rating = aDecoder.decodeObject(forKey: PropertyKey.ratingKey) as! Int
             
             self.init(name: name, photo: photo, rating: rating)
+            
         }
     
     
