@@ -114,7 +114,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WcL-dZ-cIc"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="p9n-SC-NgI">
                             <connections>
-                                <segue destination="p6a-Zl-kvf" kind="unwind" unwindAction="unwindToMealListWithSender:" id="OTJ-sv-HJf"/>
+                                <segue destination="p6a-Zl-kvf" kind="unwind" unwindAction="unwindToMealListWithSender:" id="ABb-RW-wNm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
