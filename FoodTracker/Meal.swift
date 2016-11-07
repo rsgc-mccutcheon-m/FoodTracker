@@ -11,13 +11,23 @@ import UIKit
 
 // Class declaration
 
-class Meal {
+class Meal : NSObject, NSCoding {
     
     // MARK: Properties
     
     var name: String
     var photo: UIImage?
     var rating: Int
+    
+    
+    // MARK: Types
+    
+    struct PropertyKey {
+        
+        static let nameKey = "name"
+        static let photoKey = "photo"
+        static let ratingKey = "rating"
+    }
     
     
     //MARK: Initialization
@@ -37,6 +47,21 @@ class Meal {
             return nil
         }
         
+        
+        // MARK: NSCoding
+        
+        func encodeWithCoder(aCoder: NSCoder) {
+        
+            aCoder.encode(name, forKey: PropertyKey.nameKey)
+            aCoder.encode(photo, forKey: PropertyKey.photoKey)
+            aCoder.encode(rating, forKey: PropertyKey.ratingKey)
+        
+        }
+        
+        required convenience init?(coder aDecoder : NSCoder) {
+        
+        
+        }
         
     }
     
