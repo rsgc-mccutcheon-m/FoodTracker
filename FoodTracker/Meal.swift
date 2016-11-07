@@ -25,15 +25,7 @@ class Meal : NSObject, NSCoding {
     static var DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     static let ArchiveUrl = DocumentsDirectory[0].appendPathComponent("meals")
     
-    func saveMeals() {
-        
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveUrl.path!)
-        
-        if !isSuccessfulSave {
-            print("failed to save meals")
-        }
-        
-    }
+ 
     
     // MARK: Types
     
