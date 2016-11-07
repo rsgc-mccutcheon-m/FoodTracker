@@ -79,6 +79,19 @@ class MealTableViewController: UITableViewController {
         
         if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
             
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                
+                meals[selectedIndexPath.row] = meal
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                
+            } else {
+                
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                meals.append(meal)
+                tableView.insertRows(at: [newIndexPath], with: .bottom)
+                
+            }
             // Add a new meal.
             let newIndexPath = IndexPath(row: meals.count, section: 0)
             meals.append(meal)
@@ -132,7 +145,7 @@ class MealTableViewController: UITableViewController {
             let mealDetailViewController = segue.destination as! MealViewController
             
             if let selectedMealCell = sender as? MealTableViewCell {
-            
+                
                 let indexPath = tableView.indexPath(for: selectedMealCell)!
                 let selectedMeal = meals[indexPath.row]
                 mealDetailViewController.meal = selectedMeal
@@ -141,7 +154,7 @@ class MealTableViewController: UITableViewController {
             
         }
         else if segue.identifier == "AddItem" {
-          print("Adding new meal.")  
+            print("Adding new meal.")
             
             
         }
